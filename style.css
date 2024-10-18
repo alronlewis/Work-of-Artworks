@@ -287,11 +287,11 @@ iframe {
 .Connect {
   text-align: center;
 }
+
 .description {
   text-align: center;
   font-size: 25px;
   margin-top: 50px;
-
   color: #333;
 }
 
@@ -301,53 +301,70 @@ iframe {
   box-sizing: border-box;
 }
 
+/* Buttons container */
 .buttons {
   margin-bottom: 50px;
   margin-top: 30px;
   text-align: center;
 }
 
+/* Button styles */
 .btn-hover {
-  width: 300px;  /* Further increase the width */
-  font-size: 20px;  /* Further increase font size */
+  width: 300px;  
+  font-size: 20px;  
   font-weight: 600;
   color: #fff;
   cursor: pointer;
   margin: 20px;
-  height: 80px;  /* Further increase height */
-  padding: 10px 20px;  /* Adding padding */
+  height: 80px;  
+  padding: 10px 20px;  
   text-align: center;
   border: none;
   background-size: 300% 100%;
   border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 }
 
 .btn-hover:hover {
   background-position: 100% 0;
-  moz-transition: all .4s ease-in-out;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
 }
+
 .btn-hover:focus {
   outline: none;
 }
 
+/* Gradient button colors */
 .btn-hover.color-1 {
   background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
   box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
+
 .btn-hover.color-2 {
   background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
   box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
 }
+
 .btn-hover.color-3 {
   background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
   box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .btn-hover {
+    width: 100%; /* Make buttons full width on mobile */
+    max-width: 320px; /* Optional max-width to avoid overly large buttons */
+    margin: 10px auto; /* Center the buttons and reduce margin */
+    height: 70px; /* Adjust height for mobile */
+    font-size: 18px; /* Adjust font size for better readability */
+  }
 }
 
 /* ........ Contact Us........... */
