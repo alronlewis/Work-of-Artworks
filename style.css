@@ -8,8 +8,8 @@
   margin: 0;
 }
 
-html {
-  font-size: 62.5%; /* Base font size */
+.html {
+  font-size: 62.5%;
 }
 
 body {
@@ -48,15 +48,9 @@ body {
 
 /* ............/navbar/............ */
 
-/* desktop mode............/// */
-.navbar input[type="checkbox"],
-.navbar .hamburger-lines {
-  display: none;
-}
-
 .navbar {
+  display: flex; /* Corrected from position to display */
   box-shadow: 0px 5px 10px 0px #aaa;
-  position: flex;
   width: 100%;
   background: #fff;
   color: #000;
@@ -98,10 +92,10 @@ body {
 
 /* ............//// Showcase styling ////......... */
 
-/* General section styling */
+/* General section styling with reduced height */
 .showcase-area {
   position: relative;
-  height: 400px;
+  height: 400px; /* Reduced the height for a more compact section */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,6 +106,7 @@ body {
   width: 100vw; /* Full width of the viewport */
 }
 
+/* Background image styling */
 .banner-image {
   position: absolute;
   top: 0;
@@ -143,6 +138,7 @@ body {
 }
 
 /* ......//about us//...... */
+
 #about {
   padding: 50px 0;
   background: #f5f5f7;
@@ -281,12 +277,6 @@ iframe {
   color: #333;
 }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 /* Buttons container */
 .buttons {
   margin-bottom: 50px;
@@ -296,19 +286,19 @@ iframe {
 
 /* Button styles */
 .btn-hover {
-  width: 300px;  
-  font-size: 20px;  
+  width: 300px;
+  font-size: 20px;
   font-weight: 600;
   color: #fff;
   cursor: pointer;
   margin: 20px;
-  height: 80px;  
-  padding: 10px 20px;  
+  height: 80px;
+  padding: 10px 20px;
   text-align: center;
   border: none;
   background-size: 300% 100%;
   border-radius: 50px;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .btn-hover:hover {
@@ -331,78 +321,22 @@ iframe {
 }
 
 .btn-hover.color-3 {
-  background-image: linear-gradient(to right, #d08b36, #cc5a9a, #c4bc3d, #62cb2a);
-  box-shadow: 0 4px 15px 0 rgba(203, 58, 119, 0.75);
+  background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  html {
-    font-size: 50%; /* Adjust base font size for mobile */
-  }
-
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
   .navbar {
-    height: auto; /* Allow navbar to adjust height on smaller screens */
-    padding: 1em 0; /* Add padding */
+    flex-direction: column; /* Stack items vertically */
   }
-
-  .menu-items {
-    flex-direction: column; /* Stack menu items vertically */
-    align-items: center; /* Center align items */
-    margin-top: 10px; /* Add margin */
-  }
-
-  .menu-items li {
-    margin-left: 0; /* Remove left margin on smaller screens */
-    margin-bottom: 1rem; /* Add bottom margin for spacing */
-  }
-
-  .main-title {
-    font-size: 3em; /* Reduce title size for mobile */
-  }
-
-  .subtitle {
-    font-size: 1.5em; /* Reduce subtitle size for mobile */
-  }
-
+  
   .about-wrapper {
-    flex-direction: column; /* Stack about section content vertically */
+    flex-direction: column; /* Stack about section items vertically */
   }
 
-  .about-img,
-  .about-text {
-    flex: 1 1 100%; /* Full width for mobile */
-    padding: 15px; /* Reduce padding */
+  .about-img, .about-text {
+    transform: translate(0); /* Reset transformations for smaller screens */
+    animation: none; /* Disable animations for better performance */
   }
-
-  .about-img img {
-    height: auto; /* Allow image to scale properly */
-  }
-
-  .post-container {
-    flex-direction: column; /* Stack Instagram posts vertically */
-    align-items: center; /* Center align posts */
-  }
-
-  .post {
-    width: 90%; /* Full width for mobile posts */
-  }
-
-  #youtube-video {
-    margin: 10px; /* Adjust margin for mobile */
-  }
-
-  .video-container {
-    flex-direction: column; /* Stack video section content vertically */
-  }
-
-  .btn-hover {
-    width: 100%; /* Full width buttons for mobile */
-    height: 60px; /* Adjust height */
-    font-size: 18px; /* Adjust font size */
-  }
-}
-
-@media (min-width: 769px) {
-  /* Additional styles for larger screens if needed */
 }
